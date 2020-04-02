@@ -6,12 +6,12 @@ RUN yum -y install \
     curl \
     wget
 
-RUN yum -y install \
-    bzr \
-    git \
+RUN yum -y install \bzr \git \
     mercurial \
     openssh \
     subversion
+
+    
 
 # Build tools
 RUN yum -y install \
@@ -23,8 +23,7 @@ RUN yum -y install \
     gcc \
     gcc-c++ \
     glib2-devel \
-    glibc-devel \
-    ImageMagick \
+    glibc-devel \ImageMagick \
     ImageMagick-devel \
     libcurl-devel \
     libevent-devel \
@@ -34,8 +33,7 @@ RUN yum -y install \
     libwebp-devel \
     libxml2-devel \
     libxslt-devel \
-    libyaml-devel \
-    make \
+    libyaml-devel \make \
     mysql-devel \
     ncurses-devel \
     openssl-devel \
@@ -92,7 +90,7 @@ RUN PATH=/usr/share/python/st2python/bin:$PATH bash -c \
         pip install --upgrade requests[security] venvctrl" \
     && rm -rf /root/.cache
 
-VOLUME ['/home/busybee/build']
+VOLUME ["/home/busybee/build"]
 EXPOSE 22
 
 # Run ssh daemon in foreground and wait for bees to connect.
